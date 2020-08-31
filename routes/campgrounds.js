@@ -43,7 +43,7 @@ router.get("/new",middleware.isLoggedIn,function(req, res) {
 });
 
 //SHOW- shows some more info about one campground
-router.get("/:id",middleware.isLoggedIn,function(req,res){
+router.get("/:id",function(req,res){
     //find the campground with provided ID
     Campground.findById(req.params.id).populate("comments").exec(function(err,foundCampground){
         if(err){
