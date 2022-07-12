@@ -8,7 +8,9 @@ var express     = require("express"),
     User        = require("./models/user")
     // seedDB      = require("./seeds")
   
-    
+    const env=require('dotenv');
+    env.config();
+
 const url=process.env.MONGODB_URL;
 
 mongoose.connect(url, {
